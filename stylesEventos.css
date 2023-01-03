@@ -1,0 +1,132 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+main{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+}
+section{
+    transform-style: preserve-3d ;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(206, 14, 158);
+}
+section h1{
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Montserrat', sans-serif;
+}
+.no-parallax{
+    background: rgb(8, 8, 8);
+    background: linear-gradient(360deg,  rgb(3, 3, 3) 35%, transparent), url("../img/f19.jpg");
+    z-index: 999;
+}
+.parallax h1{
+    width: 60%;
+    font-size: 3rem;
+    color: white;
+    letter-spacing: 4px;
+}
+.parallax::after{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateZ(-1px) scale(1.5);
+    background-size: 100%;
+    z-index: -1;
+}
+.bg1::after{
+    background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url("../img/d8.webp");
+    background-size: cover;
+}
+.bg2::after{
+    background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url("../img/e1.webp");
+    background-size: cover;
+}
+.bg3::after{
+    background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url("../img/b2.jpg");
+    background-size: cover;
+}
+.bg4::after{
+    background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url("../img/b3.jpg");
+    background-size: cover;
+}
+
+/********************************/
+#container{
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    /*min-height: 800px;*/
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+}
+
+
+#header{
+    display: flex;/* damos propiedad Flex al contenedor header*/
+    flex-direction: row;/* para que se comporte como fila*/
+    flex-wrap: wrap;/*Para generar un envoltura y nada se salga*/
+    align-items: center;/*Centra el contenido de manera vertical*/
+    height:80px; /*altura del header*/
+    background: rgb(6, 6, 12);
+    justify-content:space-between;
+
+}  
+
+#header img{
+    flex-grow: 1;
+    flex-basis: 30%;/*Damos el tamaño que ocupara en el header*/
+    width: 90px;
+    margin-left: 3px;
+    margin-top: 3px;
+
+    align-items: center;
+
+} /**************  FIN HEADER  ***************/
+
+/**********************************  INICIO MENU ********************************************/
+#menu{
+    flex-grow: 1; /*Espacios entre cada menu*/
+    flex-basis: 20%;
+    height: 100%;
+    padding-right: 10px;
+
+}
+#menu >ul{
+    display: flex; /*Para manipular con flex box*/
+    flex-direction: row; /*direcciona el contenido en tipo FILA*/
+    flex-wrap: wrap; /*Crea un contenedor para que nada de elementos se salga del Wrap*/
+    align-items: center;
+    height: 100%;
+    list-style: none;
+    justify-content: right;
+}
+#menu a{
+    text-decoration: none;
+    /*color:rgb(12, 98, 25);*/
+    color: rgba(100, 100, 234, 0.929);
+    padding: 10px;
+    transition: all 300ms;  
+    font-size: 20px; 
+    font-weight: 300;
+}
+#menu a:hover{
+   /* background: rgb(54, 156, 88);*/
+    color: white;
+} 
